@@ -1,0 +1,9 @@
+{
+  "name": "sqlite-jsoncons",
+  "version-string": "latest",
+  "dependencies": [
+    "nlohmann-json",
+    "jsoncons",
+    "sqlite3"
+  ]
+}

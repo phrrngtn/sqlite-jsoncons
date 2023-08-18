@@ -5,6 +5,8 @@ SQLITE_EXTENSION_INIT1
 #include <jsoncons/json.hpp>
 #include <jsoncons_ext/jmespath/jmespath.hpp>
 #include <jsoncons_ext/jsonpatch/jsonpatch.hpp>
+#include <jsoncons_ext/jsonschema/jsonschema.hpp>
+
 #include <iostream>
 #include <nlohmann/json.hpp>
 
@@ -18,6 +20,7 @@ using namespace std;
 using namespace jsoncons;
 namespace jmespath = jsoncons::jmespath;
 namespace jsonpatch = jsoncons::jsonpatch;
+namespace jsonschema = jsoncons::jsonschema; 
 
 
 // This needs to be callable from C
