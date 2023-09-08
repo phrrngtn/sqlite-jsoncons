@@ -11,11 +11,6 @@
       "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
       "environment": {
         "VCPKG_FEATURE_FLAGS": "manifests,versions,binarycaching,registries"
-      },
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
       }
     },
     {
@@ -32,6 +27,11 @@
         "CMAKE_CXX_COMPILER": "cl",
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_MAKE_PROGRAM" : "ninja.exe"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
       }
     },
     {
