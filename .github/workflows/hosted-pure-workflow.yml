@@ -116,4 +116,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: foobar-${{ matrix.os }}-${{ github.action}}
-          path: Release/*sqlite_jsoncons*
+          path: ./**/Release/*sqlite_jsoncons*
