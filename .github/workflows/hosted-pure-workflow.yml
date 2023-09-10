@@ -109,7 +109,11 @@ jobs:
       - name: Test (Release configuration)
         run: |
           ctest --preset test-release
-      - uses: actions/upload-artifact@v3
+      # How do we find out the path to the build/install artifact?
+      # how do we find out the architecture-specific name? presumably we need to make
+      # reference to a CMake variable. Is that possible?
+      - name: upload-artifact-${{ matrix.os }}-${{ github.action}}
+        uses: actions/upload-artifact@v3
         with:
-          name: banana-${{ github.run_number }}-${{ matrix.os }}
-          path: out/install
+          name: foobar-${{ matrix.os }}-${{ github.action}}
+          path: out/build/x64-debug/*sqlite_jsoncons*
