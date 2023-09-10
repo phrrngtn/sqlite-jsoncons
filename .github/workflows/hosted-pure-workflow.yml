@@ -115,5 +115,5 @@ jobs:
       - name: upload-artifact-${{ matrix.os }}-${{ github.action}}
         uses: actions/upload-artifact@v3
         with:
-          name: foobar-${{ matrix.os }}-${{ github.action}}
-          path: ./**/Release/*sqlite_jsoncons*
+          name: foobar-${{ matrix.os }}-${{ github.run_number}}
+          path: builds/ninja-multi-vcpkg/Release/*sqlite_jsoncons*
