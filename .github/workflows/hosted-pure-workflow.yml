@@ -111,8 +111,9 @@ jobs:
           ctest --preset test-release
       # How do we find out the path to the build/install artifact?
       # how do we find out the architecture-specific name? presumably we need to make
-      # reference to a CMake variable. Is that possible?
-      - name: upload-artifact-${{ matrix.os }}-${{ github.action}}
+      # reference to a CMake variable. Is that possible? The builds subdirectory
+      # comes from the binaryDir property in the preset.
+      - name: upload-artifact-${{ matrix.os }}
         uses: actions/upload-artifact@v3
         with:
           name: foobar-${{ matrix.os }}-${{ github.run_number}}
