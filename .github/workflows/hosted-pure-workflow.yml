@@ -113,8 +113,8 @@ jobs:
       # how do we find out the architecture-specific name? presumably we need to make
       # reference to a CMake variable. Is that possible? The builds subdirectory
       # comes from the binaryDir property in the preset.
-      - name: upload-artifact-${{ matrix.os }}
+      - name: upload-artifact-${{ matrix.os }}-${{ env.VCPKG_TARGET_ARCHITECTURE }}
         uses: actions/upload-artifact@v3
         with:
-          name: foobar-${{ matrix.os }}-${{ github.run_number}}
+          name: foobar-${{ matrix.os }}-${{ env.VCPKG_TARGET_ARCHITECTURE }}-${{ github.run_number}}
           path: builds/ninja-multi-vcpkg/Release/*sqlite_jsoncons*
