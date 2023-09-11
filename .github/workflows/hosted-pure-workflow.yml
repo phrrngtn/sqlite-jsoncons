@@ -22,7 +22,7 @@ on:
 
 jobs:
   job:
-    name: ${{ matrix.os }}-${{ github.workflow }}
+    name: ${{ matrix.os }}-${{ github.workflow }}-${{matrix.triplet}}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
