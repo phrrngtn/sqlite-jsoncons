@@ -117,12 +117,12 @@ jobs:
       # How do we find out the path to the build/install artifact?
       # how do we find out the architecture-specific name? presumably we need to make
       # reference to a CMake variable. Is that possible? The builds subdirectory
-      # comes from the binaryDir property in the preset.
-      - name: upload-artifact-${{ matrix.os }}-${{ matrix.triplet}}
-        uses: actions/upload-artifact@v3
-        with:
-          name: foobar-${{ matrix.os }}-${{ matrix.triplet}}-${{ github.run_number}}
-          path: builds/ninja-multi-vcpkg/Release/*sqlite_jsoncons*
+      # # comes from the binaryDir property in the preset.
+      # - name: upload-artifact-${{ matrix.os }}-${{ matrix.triplet}}
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: foobar-${{ matrix.os }}-${{ matrix.triplet}}-${{ github.run_number}}
+      #     path: builds/ninja-multi-vcpkg/Release/*sqlite_jsoncons*
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
