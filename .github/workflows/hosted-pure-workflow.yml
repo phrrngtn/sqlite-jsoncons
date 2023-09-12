@@ -49,7 +49,7 @@ jobs:
       # xref https://github.com/lukka/CppBuildTasks-Validation/blob/v10/.github/workflows/hosted-ninja-vcpkg_submod-triplet.yml
       VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
       # Tells vcpkg where binary packages are stored.      
-      VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/vcpkg/bincache
+      VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/vcpkg/bincache/${{ matrix.triplet }}
       # Let's use GitHub Action cache as storage for the vcpkg Binary Caching feature.
       VCPKG_BINARY_SOURCES: 'clear;x-gha,readwrite'
 
