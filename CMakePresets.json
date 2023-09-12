@@ -259,13 +259,35 @@
       }
     },
     {
-      "name": "macos-x64-release",
+      "name": "macos-arm64-release",
       "inherits": "macos-base",
-      "displayName": "x64 Release",
+      "displayName": "arm64 Release",
       "architecture": {
-        "value": "x64",
+        "value": "arm64",
         "strategy": "external"
+      }
+    },
+      {
+        "name": "macos-arm64-debug",
+        "inherits": "macos-base",
+        "displayName": "arm64 Debug",
+        "architecture": {
+          "value": "arm64",
+          "strategy": "external"
+        },
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "SANITIZE": false
+        }
       },
+      {
+        "name": "macos-x64-release",
+        "inherits": "macos-base",
+        "displayName": "x64 Release",
+        "architecture": {
+          "value": "x64",
+          "strategy": "external"
+        },      
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "SANITIZE": false

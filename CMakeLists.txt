@@ -4,6 +4,7 @@ project(sqlite_jsoncons)
 set(TARGET_NAME "sqlite_jsoncons")
 set(SOURCES "sqlite_jsoncons.cpp")
 
+set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 find_path(SQLITE_INCLUDE_DIR sqlite3ext.h)
 include_directories(${SQLITE_INCLUDE_DIR})
