@@ -130,4 +130,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: builds/ninja-multi-vcpkg/Release/*sqlite_jsoncons*
           file_glob: true
-          tag: ${{ github.ref }}
+          tag: latest
