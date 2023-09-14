@@ -130,7 +130,7 @@ jobs:
       # run: cmake --build --preset ninja-vcpkg --config Release
       - name: Build (Release configuration)
         run: |
-          cmake --build --preset ninja-multi-vcpkg --config Release
+          cmake --build builds\ninja-multi-vcpkg --config Release
 
       # Test the whole project with CTest, again Release configuration only.
       - name: Test (Release configuration)
