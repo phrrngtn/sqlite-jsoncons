@@ -9,6 +9,12 @@
       "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
       "environment": {
         "VCPKG_FEATURE_FLAGS": "manifests,versions,binarycaching,registries"
+      },
+      "cacheVariables": {
+        "CPACK_INCLUDE_TOPLEVEL_DIRECTORY": {
+          "type": "BOOLEAN",
+          "value": "OFF"
+        }
       }
     },
     {

@@ -22,9 +22,15 @@ namespace jmespath = jsoncons::jmespath;
 namespace jsonpatch = jsoncons::jsonpatch;
 namespace jsonschema = jsoncons::jsonschema; 
 
+// Inspired by https://github.com/0x09/sqlite-statement-vtab/blob/master/statement_vtab.c
+#ifdef SQLITE_CORE
+#define sqlite_jsoncons_entry_point sqlite_jsoncons_init
+#else
+#define sqlite_jsoncons_entry_point sqlite3_extension_init
+#endif
 
 // This needs to be callable from C
-extern "C" SQLITE_EXTENSION_ENTRY_POINT int sqlite3_extension_init(
+extern "C" SQLITE_EXTENSION_ENTRY_POINT int sqlite_jsoncons_entry_point(
     sqlite3 *db,
     char **pzErrMsg,
     const sqlite3_api_routines *pApi);
@@ -257,7 +263,7 @@ static void apply_patch_func(
   }
 }
 
-int sqlite3_extension_init(
+int sqlite_jsoncons_entry_point(
     sqlite3 *db,
     char **pzErrMsg,
     const sqlite3_api_routines *pApi)
