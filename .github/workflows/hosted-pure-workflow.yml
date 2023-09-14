@@ -130,7 +130,7 @@ jobs:
       # run: cmake --build --preset ninja-vcpkg --config Release
       - name: Build (Release configuration)
         run: |
-          cmake --build builds\ninja-multi-vcpkg --config Release
+          cmake --build builds/ninja-multi-vcpkg --config Release
 
       # Test the whole project with CTest, again Release configuration only.
       - name: Test (Release configuration)
@@ -143,7 +143,7 @@ jobs:
       # to upload the well-known artifact and rename it en route.
       - name: Install (to zip archive; Release configuration)
         run: |
-          cmake --build builds\ninja-multi-vcpkg --config Release --target package
+          cmake --build builds/ninja-multi-vcpkg --config Release --target package
 
       # "I am inclined to learn how to use cpack (part of the CMake family)
       # to make zip files that contain the built libraries and also some documentation
