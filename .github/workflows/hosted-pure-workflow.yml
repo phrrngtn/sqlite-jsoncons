@@ -89,11 +89,13 @@ jobs:
         run: mkdir -p $VCPKG_DEFAULT_BINARY_CACHE
         shell: bash
 
-      # Setup the build machine with the most recent versions of CMake and Ninja. Both are cached if not already: on subsequent runs both will be quickly restored from GitHub cache service.
+      # Setup the build machine with the most recent versions of CMake and Ninja.
+      # Both are cached if not already: on subsequent runs both will be quickly restored 
+      # from GitHub cache service.
       - uses: lukka/get-cmake@latest
 
-      # Restore vcpkg from the GitHub Action cache service. Note that packages are restored by vcpkg's binary caching
-      # when it is being run afterwards by CMake.
+      # Restore vcpkg from the GitHub Action cache service. Note that packages are
+      # restored by vcpkg's binary caching when it is being run afterwards by CMake.
       - name: Restore vcpkg
         uses: actions/cache@v3
         with:
@@ -110,8 +112,10 @@ jobs:
           key: |
             ${{ hashFiles( '.git/modules/vcpkg/HEAD' )}}
 
-      # On Windows runners, let's ensure to have the Developer Command Prompt environment setup correctly.
-      # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
+      # On Windows runners, let's ensure to have the Developer Command Prompt environment
+      # setup correctly.
+      # As used here the Developer Command Prompt created is targeting x64 and using the
+      # default the Windows SDK.
       - uses: ilammy/msvc-dev-cmd@v1
 
       # Run CMake to generate Ninja project files, using the vcpkg's toolchain file to resolve and install

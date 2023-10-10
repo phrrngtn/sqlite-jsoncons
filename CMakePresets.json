@@ -24,6 +24,7 @@
       "binaryDir": "${sourceDir}/builds/${presetName}",
       "generator": "Ninja Multi-Config",
       "cacheVariables": {
+          "CMAKE_MAKE_PROGRAM": "ninja",
           "CMAKE_TOOLCHAIN_FILE": {
               "type": "FILEPATH",
               "value": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake"
